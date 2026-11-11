@@ -1,0 +1,11 @@
+diff --git a/src/session.py b/src/session.py
+index 12ab34c..98cd765 100644
+--- a/src/session.py
++++ b/src/session.py
+@@ -3,5 +3,8 @@
+ def load_session(session_id):
++    api_key = "sk_live_example_key_123456"
++    try:
++        return database.fetch(session_id, api_key=api_key)
++    except Exception:
++        return None
